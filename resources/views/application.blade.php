@@ -14,7 +14,31 @@
 
         <div class="col-md-12 order-md-1">
             <h4 class="mb-3">Pieteikuma forma</h4>
-            <form class="needs-validation" novalidate>
+
+
+            <form method="post" action="/" class="needs-validation" novalidate>
+                {{ csrf_field() }}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info">
+                            Izvēlieties kādu no aktīvajām studiju programmām
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="country">Studiju programma</label>
+                        <select name="program" class="custom-select d-block w-100" id="program" required>
+                            <option>Izvēle</option>
+                            @foreach($programs as $program)
+                                <option value="{{ $program->id }}">{{ $program->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <hr/>
+
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="firstName">Vārds</label>
@@ -47,26 +71,9 @@
                     <small id="emailHelp" class="form-text text-muted">Uz norādīto e-pastu tiks nosūtīts saite pieteikuma statusa aplūkošanai </small>
                 </div>
 
-                <hr/>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="alert alert-info">
-                            Izvēlieties kādu no pieejamās studiju programmas
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <label for="country">Studiju programma</label>
-                        <select class="custom-select d-block w-100" id="country" required>
-                            <option>Izvēle</option>
-                            @foreach($programs as $program)
-                            <option value="{{ $program->id }}">{{ $program->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+
+
                 {{--  <div class="row">
                       <div class="col-md-12">
                           <div class="alert alert-light" role="alert">
