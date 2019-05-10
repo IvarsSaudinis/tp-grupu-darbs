@@ -172,7 +172,7 @@
                 <hr class="mb-4">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="same-address">
-                    <label class="custom-control-label" for="same-address">Apstiprinu, ka iesniedzu datus atbilstoši GDPR regulai</label>
+                    <label class="custom-control-label" for="same-address">Apstiprinu, ka vēlos, lai dati tiktu apstrādāti atbilstoši GDPR regulai</label>
                 </div>
 
                 <hr class="mb-4">
