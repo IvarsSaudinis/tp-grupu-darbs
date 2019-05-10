@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'ApplicationsController@index');
 
-	$programs = \App\Programs::all();
+Route::post('/', 'ApplicationsController@store');
 
-	$subjects = \App\Subject::all();
-
-    return view('application', compact('programs', 'subjects'));
-});
