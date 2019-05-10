@@ -15,6 +15,15 @@
         <div class="col-md-12 order-md-1">
             <h4 class="mb-3">Pieteikuma forma</h4>
 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <form method="post" action="/" class="needs-validation" novalidate>
                 {{ csrf_field() }}
@@ -137,12 +146,10 @@
                 </div>
                 <hr class="mb-4">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="same-address">
-                    <label class="custom-control-label" for="same-address">Apstiprinu, ka vēlos, lai dati tiktu apstrādāti atbilstoši GDPR regulai</label>
+                    <input name="gdpr" type="checkbox" class="custom-control-input" id="gdpr">
+                    <label class="custom-control-label" for="gdpr">Apstiprinu, ka vēlos, lai dati tiktu apstrādāti atbilstoši GDPR regulai</label>
                 </div>
-
                 <hr class="mb-4">
-
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Iesniegt pieteikumu</button>
             </form>
         </div>
