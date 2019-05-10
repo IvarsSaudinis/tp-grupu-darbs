@@ -36,4 +36,9 @@ Aplūkojot savus reģistrācijas datus tiek izvadīta šāda informācija:
 
 ```
 
+### Programmatūras izstrādes gaita
+
+Projekta komanda izlēma, ka jāizmanto kādu no populārākajiem php programmēšanas ietvariem, piemēram, Laravel un 
+izskatam jāizmanto Bootstrap.
+
 
