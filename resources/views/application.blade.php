@@ -20,7 +20,7 @@
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="alert alert-info">
+                        <div class="alert alert-info" role="alert">
                             Izvēlieties kādu no aktīvajām studiju programmām
                         </div>
                     </div>
@@ -38,7 +38,13 @@
                     </div>
                 </div>
                 <hr/>
-
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-light" role="alert">
+                           Ievadiet korektu informāciju par sekmēm. Līguma slēgšanas brīdī būs nepieciešams uzrādīt dokumentu oriģinālus.
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="firstName">Vārds</label>
@@ -72,32 +78,21 @@
                 </div>
 
 
-
-
-                {{--  <div class="row">
-                      <div class="col-md-12">
-                          <div class="alert alert-light" role="alert">
-                            Mācību iestāde piedāvā dažādas studēšanas iespējas. Viens skolnieks var pieteikties divām programmām
-                          </div>
-                      </div>
-                  </div>--}}
                 <hr/>
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="state">Priekšmets</label>
-                        <select name="p1" class="custom-select d-block w-100" id="state" required>
-                            <option value="">Izvēle</option>
-                            <option>Matemātika</option>
-                            <option>Latviešu valoda</option>
-                            <option>Dabas zinības</option>
-                            <option>Angļu valoda</option>
-                            <option>Vācu valoda</option>
+                        <select name="p1" class="custom-select d-block0" id="state" required>
+                            <option >Izvēle</option>
+                            @foreach($subjects as $subject)
+                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                            @endforeach
                         </select>
 
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="state">CE vērtējums šajā priekšmetā</label>
-                        <select class="custom-select d-block w-100" id="state" required>
+                        <select name="CElevel1" class="custom-select d-block w-100" id="state" required>
                             <option value="">Līmeņa izvēle...</option>
                             <option>A</option>
                             <option>B</option>
@@ -112,19 +107,17 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="state">Priekšmets</label>
-                        <select name="p1" class="custom-select d-block w-100" id="state" required>
-                            <option value="">Izvēle</option>
-                            <option>Matemātika</option>
-                            <option>Latviešu valoda</option>
-                            <option>Dabas zinības</option>
-                            <option>Angļu valoda</option>
-                            <option>Vācu valoda</option>
+                        <select name="p2" class="custom-select d-block " id="state" required>
+                            <option>Izvēle</option>
+                            @foreach($subjects as $subject)
+                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                            @endforeach
                         </select>
 
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="state">CE vērtējums šajā priekšmetā</label>
-                        <select class="custom-select d-block w-100" id="state" required>
+                        <select name="CElevel2" class="custom-select d-block w-100" id="state" required>
                             <option value="">Līmeņa izvēle...</option>
                             <option>A</option>
                             <option>B</option>

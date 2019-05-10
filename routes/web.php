@@ -15,5 +15,7 @@ Route::get('/', function () {
 
 	$programs = \App\Programs::all();
 
-    return view('application', compact('programs'));
+	$subjects = \App\Subject::all();
+
+    return view('application', compact('programs', 'subjects'));
 });
