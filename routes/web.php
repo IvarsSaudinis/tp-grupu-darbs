@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('application');
+
+	$programs = \App\Programs::all();
+
+    return view('application', compact('programs'));
 });

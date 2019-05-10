@@ -60,10 +60,10 @@
                     <div class="col-md-12 mb-3">
                         <label for="country">Studiju programma</label>
                         <select class="custom-select d-block w-100" id="country" required>
-                            <option value="">Izvēle</option>
-                            <option value="1">Programma 1</option>
-                            <option value="2">Programma 2</option>
-                            <option value="3">Programma 3</option>
+                            <option>Izvēle</option>
+                            @foreach($programs as $program)
+                            <option value="{{ $program->id }}">{{ $program->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
