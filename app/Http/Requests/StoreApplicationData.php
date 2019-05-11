@@ -37,7 +37,7 @@ class StoreApplicationData extends FormRequest
 	        'p2'        => 'required|different:p1',
 	        'CElevel1'  => 'required',
 	        'CElevel2'  => 'required',
-	        'average'   => 'required|digits_between:1,10',
+	        'average'   => 'required|numeric|regex:/^\d+(\.\d{1,2})?$/',
 	        'gdpr'      => 'required',
         ];
     }
@@ -68,6 +68,7 @@ class StoreApplicationData extends FormRequest
 			'email.email' => "Ir nepieciešams ievadīt korektu (!!!) e-pastu",
 			'average.required' => "Ir nepieciešams ievadīt atestāta vidējo atzīmi",
 			'average.digits_between' => "Ir nepieciešams ievadīt korektu atestāta vidējo atzīmi",
+			'average.numeric' => "Kā decimālo zīmi nepieciešams izmantot punktu",
 			'gdpr.required' => "Lai iesniegtu formu, ir jāapstiprina GDPR regulas nosacījumi"
 
 		];

@@ -14,16 +14,11 @@
 
         <div class="col-md-12 order-md-1">
             <h4 class="mb-3">Pieteikuma forma</h4>
-{{--
             @if ($errors->any())
                 <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                  <strong>Kļūda!</strong> Lūdzu, pārbaudiet vai ir aizpildīti korekti visi formas dati
                 </div>
-            @endif--}}
+            @endif
 
             <form method="post" action="/" class="needs-validation" novalidate>
                 {{ csrf_field() }}
@@ -80,7 +75,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="lastName">Personas kods</label>
-                        <input name="pcode" type="text" class="form-control @if($errors->has('pcode')) is-invalid @endif" id="pcode" placeholder="Personas kods" value="" required>
+                        <input name="pcode" type="text" class="form-control @if($errors->has('pcode')) is-invalid @endif" id="pcode" placeholder="Personas kods" value="{{ old('pcode') }}" required>
                         @if($errors->has('pcode'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('pcode') }}
@@ -123,12 +118,12 @@
                         <label for="state">CE vērtējums šajā priekšmetā</label>
                         <select name="CElevel1" class="custom-select d-block w-100 @if($errors->has('CElevel1')) is-invalid @endif" id="state" required>
                             <option value="">Līmeņa izvēle...</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>E</option>
-                            <option>F</option>
+                            <option @if(old('CElecel1')=='A') selected @endif>A</option>
+                            <option @if(old('CElecel1')=='B') selected @endif>B</option>
+                            <option @if(old('CElecel1')=='C') selected @endif>C</option>
+                            <option @if(old('CElecel1')=='D') selected @endif>D</option>
+                            <option @if(old('CElecel1')=='E') selected @endif>E</option>
+                            <option @if(old('CElecel1')=='F') selected @endif>F</option>
                         </select>
                         @if($errors->has('CElevel1'))
                             <div class="invalid-feedback">
@@ -157,12 +152,12 @@
                         <label for="state">CE vērtējums šajā priekšmetā</label>
                         <select name="CElevel2" class="custom-select d-block w-100 @if($errors->has('CElevel2')) is-invalid @endif" id="state" required>
                             <option value="">Līmeņa izvēle...</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>E</option>
-                            <option>F</option>
+                            <option @if(old('CElecel2')=='A') selected @endif>A</option>
+                            <option @if(old('CElecel2')=='B') selected @endif>B</option>
+                            <option @if(old('CElecel2')=='C') selected @endif>C</option>
+                            <option @if(old('CElecel2')=='D') selected @endif>D</option>
+                            <option @if(old('CElecel2')=='E') selected @endif>E</option>
+                            <option @if(old('CElecel2')=='F') selected @endif>F</option>
                         </select>
                         @if($errors->has('CElevel2'))
                             <div class="invalid-feedback">
@@ -174,7 +169,7 @@
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="average">Vidējā atzīme atestātā beidzot vidusskolu</label>
-                        <input  name="average" type="text" class="form-control @if($errors->has('average')) is-invalid @endif" id="name" placeholder="4.1" value="" required>
+                        <input  name="average" type="text" class="form-control @if($errors->has('average')) is-invalid @endif" id="name" placeholder="4.1" value="{{ old('average') }}" required>
                         @if($errors->has('average'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('average') }}
