@@ -49,9 +49,12 @@ izskatam jāizmanto Bootstrap.
 
 #### Pagaidu ekrānšāviņi
 
-![Alt text](public/screens/1.jpg?raw=true "1")
+![Sākuma ekrāns](public/screens/1.png?raw=true "1")
 
+![Validācijas aptivenais izskats](public/screens/2.png?raw=true "2")
 
+![Statusa logs](public/screens/3.png?raw=true "3")
+ 
 #### P.S.
 
 Sistēmiņa izveidota uz Laravel 5.5 bāzes un korektu sistēmas uzstādīšanu droši vien ir iespējams lasīt ietvara dokumentācijā.
