@@ -43,7 +43,7 @@ izskatam jāizmanto Bootstrap.
 
 ### Darāmo darbu saraksts
 
-* Būtu nepieciešams datubāzē saglabāt reģistrācijas reitinga datus. Lai vieglāk veiktu reitinga aprēķināšanu (kārtošanu) datubāzes līmenī
+* ~~Būtu nepieciešams datubāzē saglabāt reģistrācijas reitinga datus. Lai vieglāk veiktu reitinga aprēķināšanu (kārtošanu) datubāzes līmenī~~
 * Nepieciešama ievades laukus, kur dalībnieks var ievadīt unikālo kodu un saņemt informācju par pieteikumu
 * Spiežot uz pogas "Pieteikties vēl vienā programmā", nepieciešams aizvadīt uz daļēji aizpildītu formu
 * Korekta studiju reitinga aprēķināšana
