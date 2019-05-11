@@ -41,4 +41,16 @@ Aplūkojot savus reģistrācijas datus tiek izvadīta šāda informācija:
 Projekta komanda izlēma, ka jāizmanto kādu no populārākajiem php programmēšanas ietvariem, piemēram, Laravel un 
 izskatam jāizmanto Bootstrap.
 
+### Darāmo darbu saraksts
 
+* Nepieciešama ievades laukus, kur dalībnieks var ievadīt unikālo kodu un saņemt informācju par pieteikumu
+* Spiežot uz pogas "Pieteikties vēl vienā programmā", nepieciešams aizvadīt uz daļēji aizpildītu formu
+* Korekta studiju reitinga aprēķināšana
+
+#### P.S.
+
+Sistēmiņa izveidota uz Laravel 5.5 bāzes un korektu sistēmas uzstādīšanu droši vien ir iespējams lasīt ietvara dokumentācijā.
+
+Tas ir, noklonē projektu, startē `composer install`, `cp .env.example .env`, aizpilda .env ar korektiem datiem, `php artisan key:generate` kā atslēgas ģenerātors, `php artisan migrate` kā datubāzes 
+struktūras ģenerātors, `php artisan db:seed` kā datubāzes aizpildītājs (te gan katru klašu failu jāstartē atsevišķi, droši vien).
+Ir iespējams izmantot Vagrant ar vienkāršo `vagrant up` komandu. 
