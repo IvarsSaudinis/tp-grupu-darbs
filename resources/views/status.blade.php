@@ -19,24 +19,28 @@
                 <span class="text-muted">Pieteikuma statuss</span>
             </h4>
 
+            @foreach($participant->applications as $aplications)
             <table class="table table-striped table-bordered">
                 <tbody>
                 <tr>
                     <td>Reģistrācijas datums</td>
                     <td>Studiju programma</td>
-                    <td>Budžetu vietu skaits programmā</td>
+                    <td>Budžeta vietas</td>
+                    <td>Semestra maksa</td>
                     <td>Vieta reitingā</td>
                 </tr>
                 <tr>
-                    <td>{{ date('now') }}</td>
-                    <td>Socilālais darbinieks</td>
-                    <td>6</td>
+                    <td>{{ $aplications->created_at }}</td>
+                    <td><strong>{{ $aplications->program->name}}</strong></td>
+                    <td>{{ $aplications->program->budget_count}}</td>
+                    <td>€ {{ $aplications->program->price}}</td>
                     <td>
                         <strong style="color:green">12</strong>
                     </td>
                 </tr>
                 </tbody>
             </table>
+            @endforeach
             {{-- Ja ir tikai viena programma --}}
             <a class="btn btn-primary" href="#">Pieteikties vēl vienā programmā</a>
 
@@ -50,11 +54,11 @@
                 <tbody>
                 <tr>
                     <td><strong>Vārds, uzvārds, personas kods</strong></td>
-                    <td>Juris Ozols , xxx-222</td>
+                    <td> {{ $participant->name }} {{ $participant->surname }}, {{ $participant->pcode }}   </td>
                 </tr>
                 <tr>
                     <td><strong>E-pasts</strong></td>
-                    <td>xx</td>
+                    <td>{{ $participant->email  }}</td>
                 </tr>
                 <tr>
                     <td><strong>Eksāmens 1</strong> </td>
@@ -66,7 +70,7 @@
                 </tr>
                 <tr>
                     <td><strong>Atestāta vidējā atzīme</strong> </td>
-                    <td>8.8</td>
+                    <td>{{ $participant->average }} </td>
                 </tr>
                 </tbody>
             </table>

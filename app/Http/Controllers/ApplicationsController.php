@@ -56,9 +56,14 @@ class ApplicationsController extends Controller
 
 		/* Te varbūt vajadzētu rādīt pieteikumu rezultātu formu. No sērijas - pacentāmies un tiekam atalgoti ar rezultātu formu */
 
-		return view('status', compact('access_code'));
+		/* Forma ir veiksmīgi saglabāta. Brīnumainais - acīmredzamais. Varbūt redirektējam uz unikālo saitie? Jā, kāpēc nē, jo sūtīt uz e-pastu nozīmētu, ka
+		jāizmanto kāda reāla e-pasta resuri, bet tam mums liels slinkums */
 
-		return dd($request);
+		return redirect('status/' .$access_code );
+
+		//return view('status', compact('access_code'));
+
+
 	}
 
 }
