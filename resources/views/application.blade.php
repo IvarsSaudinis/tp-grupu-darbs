@@ -93,7 +93,7 @@
 
                 <div class="mb-3">
                     <label for="email">E-pasts</label>
-                    <input name="email" type="email" class="form-control @if($errors->has('email')) is-invalid @endif" id="email" value="{{ old('email') }}" placeholder="pecinja@inbox.lv">
+                    <input name="email" type="email" class="form-control @if($errors->has('email')) is-invalid @endif" id="email" value="{{ old('email') }}" placeholder="qwerty.lol366@gmail.com">
                     @if($errors->has('email'))
                         <div class="invalid-feedback">
                             {{ $errors->first('email') }}
