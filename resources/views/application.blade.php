@@ -118,12 +118,12 @@
                         <label for="state">CE vērtējums šajā priekšmetā</label>
                         <select name="CElevel1" class="custom-select d-block w-100 @if($errors->has('CElevel1')) is-invalid @endif" id="state" required>
                             <option value="">Līmeņa izvēle...</option>
-                            <option @if(old('CElecel1')=='A') selected @endif>A</option>
-                            <option @if(old('CElecel1')=='B') selected @endif>B</option>
-                            <option @if(old('CElecel1')=='C') selected @endif>C</option>
-                            <option @if(old('CElecel1')=='D') selected @endif>D</option>
-                            <option @if(old('CElecel1')=='E') selected @endif>E</option>
-                            <option @if(old('CElecel1')=='F') selected @endif>F</option>
+                            <option @if(old('CElevel1')=='A') selected @endif>A</option>
+                            <option @if(old('CElevel1')=='B') selected @endif>B</option>
+                            <option @if(old('CElevel1')=='C') selected @endif>C</option>
+                            <option @if(old('CElevel1')=='D') selected @endif>D</option>
+                            <option @if(old('CElevel1')=='E') selected @endif>E</option>
+                            <option @if(old('CElevel1')=='F') selected @endif>F</option>
                         </select>
                         @if($errors->has('CElevel1'))
                             <div class="invalid-feedback">
@@ -152,12 +152,12 @@
                         <label for="state">CE vērtējums šajā priekšmetā</label>
                         <select name="CElevel2" class="custom-select d-block w-100 @if($errors->has('CElevel2')) is-invalid @endif" id="state" required>
                             <option value="">Līmeņa izvēle...</option>
-                            <option @if(old('CElecel2')=='A') selected @endif>A</option>
-                            <option @if(old('CElecel2')=='B') selected @endif>B</option>
-                            <option @if(old('CElecel2')=='C') selected @endif>C</option>
-                            <option @if(old('CElecel2')=='D') selected @endif>D</option>
-                            <option @if(old('CElecel2')=='E') selected @endif>E</option>
-                            <option @if(old('CElecel2')=='F') selected @endif>F</option>
+                            <option @if(old('CElevel2')=='A') selected @endif>A</option>
+                            <option @if(old('CElevel2')=='B') selected @endif>B</option>
+                            <option @if(old('CElevel2')=='C') selected @endif>C</option>
+                            <option @if(old('CElevel2')=='D') selected @endif>D</option>
+                            <option @if(old('CElevel2')=='E') selected @endif>E</option>
+                            <option @if(old('CElevel2')=='F') selected @endif>F</option>
                         </select>
                         @if($errors->has('CElevel2'))
                             <div class="invalid-feedback">
