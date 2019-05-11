@@ -15,3 +15,9 @@ Route::get('/', 'ApplicationsController@index');
 
 Route::post('/', 'ApplicationsController@store');
 
+// /status/xyzkfjeubw
+
+Route::get('status', function () {
+	return view('status');
+
+});
