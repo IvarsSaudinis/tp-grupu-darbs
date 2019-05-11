@@ -31,8 +31,12 @@ class ApplicationsController extends Controller
 		// Validācija izieta. Skatīt app/Http/Request/StoreApplicationData
 		// ------------
 
+		//return dd( $this->rating($request->get('CElevel1')) + $this->rating($request->get('CElevel2')));
+
 		/* īsti nekorekts veidas kā saglabāt unikālu saiti. Bet kolēģi apzinās, ka formas dati būs tik maz, ka risks nav liels */
 		$access_code = str_random(8);
+
+		$rating = $this->rating($request->get('CElevel1')) + $this->rating($request->get('CElevel2'));
 
 		// Saglabājam formas datus par lietotāju
 		$participant = new Participants();
@@ -42,7 +46,9 @@ class ApplicationsController extends Controller
 		$participant->email = $request->get('email');
 		$participant->average = $request->get('average');
 		$participant->access = $access_code;
+		$participant->rating = $rating;
 		$participant->save();
+
 
 		/* Saglabājam formas datus par pieteikumu (tādi katram lietotājam var būt ne vairāk par divi */
 		$application = new Applications();
@@ -64,6 +70,19 @@ class ApplicationsController extends Controller
 		//return view('status', compact('access_code'));
 
 
+	}
+
+	public function rating($level)
+	{
+		switch ($level)
+		{
+			case 'A'; return 6;
+			case 'B'; return 5;
+			case 'C'; return 4;
+			case 'D'; return 3;
+			case 'E'; return 2;
+			case 'F'; return 1;
+		}
 	}
 
 }
