@@ -28,11 +28,12 @@ class StoreApplicationData extends FormRequest
     public function rules()
     {
         return [
+        	'program'   => 'required',
 	        'name'      => 'required|min:3',
 	        'surname'   => 'required|min:3',
 	        'pcode'     => 'required|min:12|max:15',
 	        'email'     => 'required|email',
-	        'p1'        => 'required',
+	        'p1'        => 'required|different:p2',
 	        'p2'        => 'required|different:p1',
 	        'CElevel1'  => 'required',
 	        'CElevel2'  => 'required',
@@ -49,6 +50,7 @@ class StoreApplicationData extends FormRequest
 	public function messages()
 	{
 		return [
+			'program.required' => 'Lai pieteiktos studijām, jāizvēlas interesējošā studiju programma',
 			'name.required' => 'Ir nepieciešams ievadīt potenciālā studenta vārdu',
 			'name.min' => 'Vārda garums ir par īsu!',
 			'surname.required'  => 'Ir nepieciešams ievadīt potenciālā studenta uzvārdu',
@@ -56,12 +58,14 @@ class StoreApplicationData extends FormRequest
 			'pcode.required' => "Nepieciešams ievadīt personas kodu",
 			'pcode.min' => "Nekorekts personas koda garums",
 			'pcode.max' => "Nekorekts personas koda garums",
-			'p1.required' => "Nepieciešams ievadīt eksamenu rezultātus",
-			'p2.required' => "Nepieciešams ievadīt eksamenu rezultātus",
-			'p2.different' => "Jāievada divas eksāmenu atzīmes. Jūs vēlējāties ievadīt vienam un tam pašam...",
+			'p1.required' => "Nepieciešams izvēlēties priekšmetu",
+			'p2.required' => "Nepieciešams izvēlēties priekšmetu",
+			'p1.different' => "Iesniegšanai jāizvēlas divus dažādus priekšmetus",
+			'p2.different' => "Iesniegšanai jāizvēlas divus dažādus priekšmetus",
 			'CElevel1.required' => "Jānorāda eksāmenā saņemtais vērtējums",
 			'CElevel2.required' => "Jānorāda eksāmenā saņemtais vērtējums",
 			'email.required' => "Ir nepieciešams ievadīt e-pastu",
+			'email.email' => "Ir nepieciešams ievadīt korektu (!!!) e-pastu",
 			'average.required' => "Ir nepieciešams ievadīt atestāta vidējo atzīmi",
 			'average.digits_between' => "Ir nepieciešams ievadīt korektu atestāta vidējo atzīmi",
 			'gdpr.required' => "Lai iesniegtu formu, ir jāapstiprina GDPR regulas nosacījumi"
