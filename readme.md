@@ -47,6 +47,11 @@ izskatam jāizmanto Bootstrap.
 * Spiežot uz pogas "Pieteikties vēl vienā programmā", nepieciešams aizvadīt uz daļēji aizpildītu formu
 * Korekta studiju reitinga aprēķināšana
 
+#### Pagaidu ekrānšāviņi
+
+![Alt text](public/screens/1.jpg?raw=true "1")
+
+
 #### P.S.
 
 Sistēmiņa izveidota uz Laravel 5.5 bāzes un korektu sistēmas uzstādīšanu droši vien ir iespējams lasīt ietvara dokumentācijā.
