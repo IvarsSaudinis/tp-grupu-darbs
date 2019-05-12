@@ -12,4 +12,6 @@ class Applications extends Model
     {
     	return $this->hasOne('App\Programs', 'id', 'program_id');
     }
+
+
 }

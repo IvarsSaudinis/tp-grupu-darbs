@@ -32,7 +32,7 @@
                 <span class="text-muted">Pieteikuma statuss</span>
             </h4>
 
-            @foreach($participant->applications as $aplications)
+            @foreach($participant->applications as $appl)
             <table class="table table-striped table-bordered">
                 <tbody>
                 <tr>
@@ -43,10 +43,10 @@
                     <td>Vieta reitingā</td>
                 </tr>
                 <tr>
-                    <td>{{ $aplications->created_at }}</td>
-                    <td><strong>{{ $aplications->program->name}}</strong></td>
-                    <td>{{ $aplications->program->budget_count}}</td>
-                    <td>€ {{ $aplications->program->price}}</td>
+                    <td>{{ $appl->created_at }}</td>
+                    <td><strong>{{ $appl->program->name}}</strong></td>
+                    <td>{{ $appl->program->budget_count}}</td>
+                    <td>€ {{ $appl->program->price}}</td>
                     <td>
                         <strong style="color:green">12</strong>
                     </td>
@@ -76,11 +76,11 @@
                 </tr>
                 <tr>
                     <td><strong>Eksāmens 1</strong> </td>
-                    <td>Latviešu valoda, A</td>
+                    <td> {{   $participant->program_first->name or ''  }}, <strong>{{ $participant->CElevel1 }}  </strong>  </td>
                 </tr>
                 <tr>
                     <td><strong>Eksāmens 2</strong> </td>
-                    <td>Matemātika, C</td>
+                    <td> {{   $participant->program_second->name or ''  }}, <strong>{{ $participant->CElevel2 }} </strong>    </td>
                 </tr>
                 <tr>
                     <td><strong>Atestāta vidējā atzīme</strong> </td>

@@ -45,6 +45,12 @@ class ApplicationsController extends Controller
 		$participant->pcode = $request->get('pcode');
 		$participant->email = $request->get('email');
 		$participant->average = $request->get('average');
+		/* izrādās katram topošam studentam nevar mainīties sertifikāti, tāpēc piesaistam tos te */
+		$participant->subject_id1 = $request->get('p1');
+		$participant->CElevel1 = $request->get('CElevel1');
+		$participant->subject_id2 = $request->get('p2');
+		$participant->CElevel2 = $request->get('CElevel2');
+
 		$participant->access = $access_code;
 		$participant->rating = $rating;
 		$participant->save();
@@ -54,10 +60,7 @@ class ApplicationsController extends Controller
 		$application = new Applications();
 		$application->participant_id = $participant->id;
 		$application->program_id = $request->get('program');
-		$application->subject_id1 = $request->get('p1');
-		$application->CElevel = $request->get('CElevel1');
-		$application->subject_id2 = $request->get('p2');
-		$application->CElevel2 = $request->get('CElevel2');
+
 		$application->save();
 
 		/* Te varbūt vajadzētu rādīt pieteikumu rezultātu formu. No sērijas - pacentāmies un tiekam atalgoti ar rezultātu formu */

@@ -16,6 +16,14 @@ class Participants extends Model
 		return $this->hasMany('App\Applications', 'participant_id', 'id');
 	}
 
+	public function program_first()
+	{
+		return $this->hasOne('App\Subject', 'id', 'subject_id1');
+	}
 
+	public function program_second()
+	{
+		return $this->hasOne('App\Subject', 'id', 'subject_id2');
+	}
 
 }

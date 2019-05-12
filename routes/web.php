@@ -15,14 +15,15 @@ Route::get('/', 'ApplicationsController@index');
 
 Route::post('/', 'ApplicationsController@store');
 
-// /status/xyzkfjeubw
+// url: /status/xyzkfjeubw
+// todo: Vieta, kur atrisināt reitinga problēmu.
 Route::get('status/{access}', function ($access) {
 
 	$participant = \App\Participants::where('access', $access)->first();
 
-	//$applications_count = \App\Applications::where('pcode')
 
-	return view('status', compact('participant', 'access'));
+
+	return view('status', compact('participant', 'access' ));
 
 });
 
