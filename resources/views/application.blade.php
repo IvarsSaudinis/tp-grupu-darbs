@@ -6,7 +6,7 @@
         <h2>Reģistrācija studijām </h2>
         <p class="lead">
             Pieteikuma forma studijām nepieciešama, lai elektroniski pieteiktos studijām. Šī forma ir fiktīva un izgatavota studija darba ietvaros.
-            <a href="#">Esi jau reģistrējies? Pārbaudi sava pieteikuma statusu!</a>
+            <a href="{{ url('/status') }}">Esi jau reģistrējies? Pārbaudi sava pieteikuma statusu!</a>
         </p>
     </div>
 
