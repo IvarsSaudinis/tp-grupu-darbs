@@ -56,8 +56,9 @@
             @endforeach
             {{-- Ja ir tikai viena programma --}}
 
-           {{-- <a class="btn btn-primary" href="{{ url('/application/' . $access) }}">Pieteikties vēl vienā programmā</a>--}}
-
+            @if($participant->applications->count() ==1)
+                <a class="btn btn-primary" href="{{ url('/application/' . $access) }}">Pieteikties vēl vienā programmā</a>
+            @endif
             <hr/>
 
             <h4 class="d-flex justify-content-between align-items-center mb-3">

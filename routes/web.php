@@ -21,12 +21,32 @@ Route::get('status/{access}', function ($access) {
 
 	$participant = \App\Participants::where('access', $access)->first();
 
-
-
 	return view('status', compact('participant', 'access' ));
 
 });
 
+//
+Route::get('application/{access}', function ($access) {
+
+	// get participant
+	$participant = \App\Participants::where('access', $access)->first();
+
+	$programs = \App\Programs::all();
+
+	return view('additional', compact('participant', 'programs', 'access'));
+
+});
+
+Route::post('application/{access}', function (\Illuminate\Http\Request $request, $access) {
+
+	$application = new \App\Applications();
+	$application->program_id = $request->get('program');
+	$application->participant_id = $request->get('participant');
+	$application->save();
+
+	return redirect('status/' . $access);
+
+});
 
 // forma statusa koda ievadei un mini statistika
 Route::get('status', function () {
