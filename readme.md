@@ -47,7 +47,7 @@ izskatam jāizmanto Bootstrap.
 * Nepieciešama ievades laukus, kur dalībnieks var ievadīt unikālo kodu un saņemt informācju par pieteikumu
 * Spiežot uz pogas "Pieteikties vēl vienā programmā", nepieciešams aizvadīt uz daļēji aizpildītu formu
 * Korekta studiju reitinga aprēķināšana
-* Validēt pietikumus un neļaut pietiekties 1 pk uz vairāk kā divām programmām
+* Validēt pieteikumus un neļaut pieteikties vienam PK uz vairāk kā divām programmām
 
 #### Pagaidu ekrānšāviņi
 

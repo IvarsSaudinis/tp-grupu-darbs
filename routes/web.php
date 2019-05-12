@@ -20,14 +20,37 @@ Route::get('status/{access}', function ($access) {
 
 	$participant = \App\Participants::where('access', $access)->first();
 
-	return view('status', compact('participant'));
+	//$applications_count = \App\Applications::where('pcode')
+
+	return view('status', compact('participant', 'access'));
 
 });
 
 
-// iespēja ievadīt savu unikālo kodu
-
+// forma statusa koda ievadei un mini statistika
 Route::get('status', function () {
-	return view('status');
+
+	$total = \App\Applications::get()->count();
+
+	$popular = \App\Applications::select('program_id')->distinct()->get();
+
+	return view('check', compact('total', 'popular'));
 
 });
+
+Route::post('status', function (\Illuminate\Http\Request $request) {
+
+	$access = $request->get('access');
+
+	$application = \App\Participants::where('access', $access)->first();
+
+	if($application)
+	{
+		return redirect('status/'.$access);
+	}
+
+	return abort(404, 'Šāds kods neeksistē');
+
+});
+
+
