@@ -2,21 +2,26 @@
 
 namespace App\Http\Requests;
 
+use App\Participants;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreApplicationData extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * fuck, pārbaudām vai datubāzē šāds personas kods jau nav divas reizes. Nepārbaudām personas kodu ar svītru vai bez...
      *
      * @return bool
      */
     public function authorize()
     {
-    	/*
-    	 * TODO: varbūt šeit varētu nodefinēt validāciju vai potenciālais students ir pieteicies jau divām programmām
-    	 * vai varbūt tomēr kontroliera loģikā... nezinu...
-    	 */
+
+    	$participants = Participants::where('pcode', $this->request->get('pcode'))->count();
+
+    	if($participants>2)
+	    {
+	    	return false;
+	    }
+
         return true;
     }
 
