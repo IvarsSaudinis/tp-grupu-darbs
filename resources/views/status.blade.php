@@ -40,6 +40,7 @@
                     <td>Studiju programma</td>
                     <td>Budžeta vietas</td>
                     <td>Semestra maksa</td>
+                    <td>Pieteikumu skaits programmai</td>
                     <td>Vieta reitingā</td>
                 </tr>
                 <tr>
@@ -47,8 +48,9 @@
                     <td><strong>{{ $appl->program->name}}</strong></td>
                     <td>{{ $appl->program->budget_count}}</td>
                     <td>€ {{ $appl->program->price}}</td>
+                    <td>{{ $pieteikumi[$loop->index] }}</td>
                     <td>
-                        <strong style="color:green">12</strong>
+                        <strong style="color:green">{{ $pieteikumi[$loop->index]  - 1 }}</strong>
                     </td>
                 </tr>
                 </tbody>
@@ -62,7 +64,7 @@
             <hr/>
 
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Iesniegtā pieteikuma dati</span>
+                <span class="text-muted">Dokumentu iesniedzēja dati</span>
             </h4>
 
             <table class="table table-bordered">
