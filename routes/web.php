@@ -29,8 +29,6 @@ Route::get('status/{access}', function ($access) {
 	    - pievienot reitingu kolekcijā .. un priecāties
 
 	*/
-	$pieteikumi[0] = \App\Applications::where('program_id', $participant->program_first->id)->count();
-	$pieteikumi[1] = \App\Applications::where('program_id', $participant->program_second->id)->count();
 
 
 	return view('status', compact('participant', 'access', 'pieteikumi'));

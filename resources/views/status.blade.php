@@ -48,9 +48,9 @@
                     <td><strong>{{ $appl->program->name}}</strong></td>
                     <td>{{ $appl->program->budget_count}}</td>
                     <td>€ {{ $appl->program->price}}</td>
-                    <td>{{ $pieteikumi[$loop->index] }}</td>
+                    <td>..</td>
                     <td>
-                        <strong style="color:green">{{ $pieteikumi[$loop->index]  - 1 }}</strong>
+                        <strong style="color:green">12</strong>
                     </td>
                 </tr>
                 </tbody>
