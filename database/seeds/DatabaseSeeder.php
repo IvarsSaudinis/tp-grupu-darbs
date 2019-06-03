@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+    	/* Programmas nosaukumi, semestra maksas un budžeta vietas */
         $this->call(ProgramsSeeder::class);
+
+        /* Eksāmenu mācībpriekšmeti */
+        $this->call(SubjectSeeder::class);
     }
 }
