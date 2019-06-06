@@ -16,6 +16,7 @@ class ApplicationsController extends Controller
 	 */
     public function index()
     {
+
 	    $programs = Programs::all();
 
 	    $subjects = Subject::all();
@@ -28,6 +29,8 @@ class ApplicationsController extends Controller
 	 */
 	public function store(StoreApplicationData $request)
 	{
+
+	    return dd($request);
 		// Validācija izieta. Skatīt app/Http/Request/StoreApplicationData
 		// ------------
 

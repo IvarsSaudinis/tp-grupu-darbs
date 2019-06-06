@@ -36,7 +36,7 @@ class StoreApplicationData extends FormRequest
         	'program'   => 'required',
 	        'name'      => 'required|min:3',
 	        'surname'   => 'required|min:3',
-	        'pcode'     => 'required|min:12|max:15',
+	        'pcode'     => 'required|min:11|max:15',
 	        'email'     => 'required|email',
 	        'p1'        => 'required|different:p2',
 	        'p2'        => 'required|different:p1',
